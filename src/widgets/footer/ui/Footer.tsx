@@ -22,7 +22,7 @@ export const Footer = () => {
   const navigate = useNavigate()
   return (
     <footer className="bg-white dark:bg-[#111111] text-black dark:text-white py-[30px] max-h-[240px]">
-      <div className="container mx-auto grid grid-cols-4">
+      <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2">
         <div className="flex flex-col">
           <img
             className="w-[55px] h-[36px] mb-[48px]"

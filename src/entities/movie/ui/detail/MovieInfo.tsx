@@ -2,6 +2,8 @@ import { memo, type FC } from "react";
 import { useMovie } from "../../model/useMovie";
 import { createImageUrl } from "@/shared/utils";
 import { Image } from "antd";
+import { Link } from "react-router-dom";
+import { Title } from "@/shared/ui/title/Title";
 
 interface Props {
   id: string;
@@ -15,7 +17,7 @@ export const MovieInfo: FC<Props> = memo((props) => {
 
   return (
     <div>
-      <section>
+      <section className="container mx-auto">
         <img src={createImageUrl(data?.backdrop_path)} alt="" />
       </section>
       <section className="container">
@@ -34,6 +36,14 @@ export const MovieInfo: FC<Props> = memo((props) => {
             alt=""
           />
         ))}
+      </section>
+      <section className="container mt-10">
+        <Title>Tabs</Title>
+        <div className="flex gap-4">
+          <Link to={"review"}>Review</Link>
+          <Link to={"cast"}>Cast</Link>
+          <Link to={"other"}>Others</Link>
+        </div>
       </section>
     </div>
   );

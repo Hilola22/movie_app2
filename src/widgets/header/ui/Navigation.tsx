@@ -7,17 +7,17 @@ import { FiSearch } from "react-icons/fi";
 
 export const Navigation = memo(() => {
   const baseLi =
-    "flex flex-col items-center px-7 transition-colors duration-300"; // smooth color
+    "flex flex-col items-center px-7 transition-colors duration-300";
 
   return (
-    <ul className="flex items-center">
+    <ul className="flex lg:items-center lg:flex-row md:flex-row flex-col gap-4 text-right">
       <NavLink to="/" end>
         {({ isActive }) => (
           <li
             className={`${baseLi} ${
               isActive
-                ? "text-[#C61F1F] dark:text-[#ff4d4d]" // 🌑 dark active
-                : "text-gray-500 dark:text-gray-300" // 🌑 dark normal
+                ? "text-[#C61F1F] dark:text-[#ff4d4d]"
+                : "text-gray-500 dark:text-gray-300" 
             }`}
           >
             <GoHomeFill size={24} />

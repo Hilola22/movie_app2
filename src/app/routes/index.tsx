@@ -1,19 +1,34 @@
-import { lazy, memo } from 'react';
-import { useRoutes } from 'react-router-dom';
-import MainLayout from '../layout/MainLayout';
-const Home = lazy(()=> import("@/pages/home"))
-const Movie = lazy(()=> import("@/pages/movie"))
-const MovieDetail = lazy(()=> import("@/pages/movie-detail"))
+import { lazy, memo } from "react";
+import { useRoutes } from "react-router-dom";
+import MainLayout from "../layout/MainLayout";
+const Home = lazy(() => import("@/pages/home"));
+const Movie = lazy(() => import("@/pages/movie"));
+const MovieDetail = lazy(() => import("@/pages/movie-detail"));
+const Cast = lazy(() => import("@/pages/movie-detail/cast"));
+const Others = lazy(() => import("@/pages/movie-detail/others"));
+const Reviews = lazy(() => import("@/pages/movie-detail/review"));
 
 const AppRouter = () => {
   const router = useRoutes([
-    {path: "/", element: <MainLayout/>, children: [
-      {path: "", element: <Home/>},
-      {path: "/movie", element: <Movie/>},
-      {path: "/movie/:id", element: <MovieDetail/>}
-    ]}
-  ])
-  return router
+    {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+        { path: "", element: <Home /> },
+        { path: "/movie", element: <Movie /> },
+        {
+          path: "/movie/:id",
+          element: <MovieDetail />,
+          children: [
+            { path: "cast", element: <Cast /> },
+            { path: "other", element: <Others /> },
+            { path: "review", element: <Reviews /> },
+          ],
+        },
+      ],
+    },
+  ]);
+  return router;
 };
 
 export default memo(AppRouter);
