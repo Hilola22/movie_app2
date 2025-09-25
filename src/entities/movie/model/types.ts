@@ -1,5 +1,3 @@
-import type { Key } from "react";
-
 export interface IMovie {
   id: number | undefined;
   page: number;
