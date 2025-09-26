@@ -31,7 +31,7 @@ export const CrewView = memo(() => {
           />
         </div>
 
-        <div className="md:flex-1 text-gray-800 dark:text-gray-200 flex flex-col ml-10 gap-8">
+        <div className="md:flex-1 text-gray-800 dark:text-gray-200 flex flex-col lg:ml-10 gap-8">
           <div className="space-y-2 text-gray-800 dark:text-gray-200">
             <h1 className="text-2xl md:text-3xl font-bold">{data.name}</h1>
             {data.birthday && (

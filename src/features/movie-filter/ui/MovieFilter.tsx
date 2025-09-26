@@ -31,7 +31,7 @@ export const MovieFilter = memo(() => {
     <div className="w-[200px]">
       <Select
         className="w-60"
-        placeholder="Filter"
+        placeholder="Sort By"
         options={options}
         allowClear
         value={searchParams.get("sort_by") || undefined}
