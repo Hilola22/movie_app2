@@ -7,14 +7,14 @@ interface Props {
   total_pages: number;
 }
 
-export const MoviePagination: FC<Props> = memo((props) => {
-  const { page, total_pages } = props;
+export const MoviePagination: FC<Props> = memo(({ page, total_pages }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const onChange: PaginationProps["onChange"] = (p) => {
     searchParams.set("page", p.toString());
     setSearchParams(searchParams);
   };
+
   return (
     <div className="py-10 flex justify-center">
       <Pagination
@@ -23,6 +23,7 @@ export const MoviePagination: FC<Props> = memo((props) => {
         total={total_pages > 10000 ? 10000 : total_pages}
         pageSize={20}
         showSizeChanger={false}
+        className="dark:bg-gray-900 dark:rounded-2xl"
       />
     </div>
   );

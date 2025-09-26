@@ -6,11 +6,11 @@ import { Outlet } from 'react-router-dom';
 const MainLayout = () => {
   return (
     <>
-    <Header/>
-    <main className='bg-gray-100 dark:bg-black dark:text-white'>
-      <Outlet/>
-    </main>
-    <Footer/>
+      <Header />
+      <main className="bg-[#f9fafb]  dark:bg-[#0b0627] dark:text-white">
+        <Outlet />
+      </main>
+      <Footer />
     </>
   );
 };

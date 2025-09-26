@@ -1,11 +1,13 @@
-import { memo } from 'react'
+import { memo } from "react";
 import { CiLogin } from "react-icons/ci";
 
-export const Login = memo(() => {
+export const Login = memo(({ className = "" }: { className?: string }) => {
   return (
-    <button className="lg:flex items-center gap-2 lg:py-[8px] lg:px-[26px] hidden text-white bg-[#C61F1F] hover:bg-[#9e2020] rounded-xl">
+    <button
+      className={`items-center gap-2 py-2 px-5 text-white bg-[#C61F1F] hover:bg-[#9e2020] rounded-xl ${className}`}
+    >
       <span>Login</span>
       <CiLogin size={22} />
     </button>
   );
-})
+});

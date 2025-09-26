@@ -14,7 +14,7 @@ export const Hero = memo(() => {
   const navigate = useNavigate();
   const { getMovies } = useMovie();
   const { data } = getMovies();
-  const movies = data?.results?.slice(0, 5) || [];
+  const movies = data?.results?.slice(6, 11) || [];
 
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
@@ -54,9 +54,7 @@ export const Hero = memo(() => {
                   <span>•</span>
                   <span>1ч 34м</span>
                   <span>•</span>
-                  <span>{movie.original_language?.toUpperCase()}</span>
-                  <span>•</span>
-                  <span>6+</span>
+                  <span>{movie.original_language?.toUpperCase()}</span> 
                 </p>
 
                 <button
@@ -77,28 +75,32 @@ export const Hero = memo(() => {
 
       <div className="relative mt-6 flex justify-center items-center">
         <div
-          className="main-prev absolute -left-6 w-10 h-10 bg-gray-900/80
+          className="main-prev -left-6 size-5 md:size-7 lg:size-9 bg-gray-900/80 mr-2
                         dark:bg-gray-200 dark:text-black text-white
                         rounded-full flex items-center justify-center
-                        cursor-pointer hover:scale-110 transition"
+                        cursor-pointer hover:scale-110 transition -mt-6"
         >
-          <FaArrowLeft />
+          <FaArrowLeft className=" lg:text-[20px] md:text-[16px] text-[12px]" />
         </div>
 
         <Swiper
           onSwiper={setThumbsSwiper}
           loop
           spaceBetween={12}
-          slidesPerView={4}
           freeMode
           watchSlidesProgress
           modules={[FreeMode, Navigation, Thumbs]}
+          breakpoints={{
+            0: { slidesPerView: 2 },
+            640: { slidesPerView: 3 },
+            1024: { slidesPerView: 5 },
+          }}
           className="h-[110px] w-[90%] px-6"
         >
           {movies.map((movie: any) => (
             <SwiperSlide
               key={movie.id}
-              style={{ width: "110px" }}
+              style={{ width: "110px" , height: "80px"}}
               className="opacity-40 hover:opacity-100 cursor-pointer transition"
             >
               <img
@@ -109,13 +111,14 @@ export const Hero = memo(() => {
             </SwiperSlide>
           ))}
         </Swiper>
+
         <div
-          className="main-next absolute -right-6 w-10 h-10 bg-gray-900/80
+          className="main-next -right-6 size-5 md:size-7 lg:size-9 bg-gray-900/80 ml-2
                         dark:bg-gray-200 dark:text-black text-white
                         rounded-full flex items-center justify-center
-                        cursor-pointer hover:scale-110 transition"
+                        cursor-pointer hover:scale-110 transition -mt-6"
         >
-          <FaArrowRight />
+          <FaArrowRight className="lg:text-[20px] md:text-[16px] text-[12px]" />
         </div>
       </div>
     </section>

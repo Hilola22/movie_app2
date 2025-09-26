@@ -11,10 +11,11 @@ export const MovieSort = memo(() => {
   };
 
   return (
-    <div className="container mx-auto w-[200px]">
+    <div className="w-[200px]">
       <Select
         className="w-60"
         placeholder="Sort by"
+        allowClear
         options={[
           { value: "popularity.desc", label: "Popuplar" },
           { value: "vote_average.asc", label: "Vote -" },

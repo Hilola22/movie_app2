@@ -3,6 +3,7 @@ import { Logo } from "./Logo";
 import { Navigation } from "./Navigation";
 import { Option } from "./Option";
 import { FiMenu, FiX } from "react-icons/fi";
+import { Login } from "../../../features/login";
 
 export const Header = memo(() => {
   const [open, setOpen] = useState(false);
@@ -49,7 +50,9 @@ export const Header = memo(() => {
             onClick={() => setOpen(!open)}
           />
         )}
+
         <Navigation />
+        <Login className="flex text-[12px]"/>
       </div>
       {open && (
         <div

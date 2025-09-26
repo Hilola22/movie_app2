@@ -12,7 +12,7 @@ export const MovieDetail = memo(() => {
     <div>
       <MovieInfo id={id as string}/>
       <Outlet/>
-      <MovieList movies={data?.results?.slice(0, 4)}/>
+      <MovieList movies={data?.results?.slice(0, 8)}/>
     </div>
   )
 })

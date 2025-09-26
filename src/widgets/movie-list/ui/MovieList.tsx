@@ -7,11 +7,11 @@ interface Props {
 
 export const MovieList: FC<Props> = memo((props) => {
   const { movies } = props;
-  const moviesToShow = movies?.slice(0, 4) || [];
+  
 
   return (
-    <div className="container grid lg:grid-cols-4 gap-3 md:grid-cols-3 grid-cols-2 pb-30">
-      {moviesToShow.map((item: IMovie) => (
+    <div className="container grid lg:grid-cols-4 gap-3 md:grid-cols-3 grid-cols-1 pb-10">
+      {movies?.map((item: IMovie) => (
         <MovieCard key={item.id} movie={item} />
       ))}
     </div>

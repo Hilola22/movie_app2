@@ -1,9 +1,15 @@
+export interface IGenre {
+  id: number;
+  name: string;
+}
+
 export interface IMovie {
-  id: number | undefined;
-  page: number;
+  id: number;
+  page?: number;
   adult: boolean;
   backdrop_path: string;
-  genre_ids: number[];
+  genre_ids?: number[]; 
+  genres?: IGenre[]; 
   original_language: string;
   original_title: string;
   overview: string;
@@ -19,4 +25,6 @@ export interface IMovie {
 export interface IMovieParams {
   page: string;
   sort_by: string;
+  start_year?: string; 
+  end_year?: string;
 }

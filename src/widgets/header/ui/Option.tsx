@@ -6,8 +6,8 @@ import { Login } from "@/features/login";
 export const Option = memo(() => {
   return (
     <div className="flex gap-7 items-center">
-      <LanguageSwitcher/>
-      <Login/>
+      <LanguageSwitcher />
+      <Login className="hidden lg:flex" />
       <ThemeChanger />
     </div>
   );

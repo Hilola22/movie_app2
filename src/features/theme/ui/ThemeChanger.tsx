@@ -2,7 +2,7 @@ import { memo, useState } from "react";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 export const ThemeChanger = memo(() => {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   const [animating, setAnimating] = useState(false);
 
   const toggleTheme = () => {
@@ -12,7 +12,7 @@ export const ThemeChanger = memo(() => {
       setDark((prev) => !prev);
     }, 200);
 
-    setTimeout(() => setAnimating(false), 400);
+    setTimeout(() => setAnimating(false), 200);
 
     document.documentElement.classList.toggle("dark", !dark);
   };

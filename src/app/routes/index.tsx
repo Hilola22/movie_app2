@@ -7,6 +7,7 @@ const MovieDetail = lazy(() => import("@/pages/movie-detail"));
 const Cast = lazy(() => import("@/pages/movie-detail/cast"));
 const Others = lazy(() => import("@/pages/movie-detail/others"));
 const Reviews = lazy(() => import("@/pages/movie-detail/review"));
+const CrewDetail = lazy(() => import("@/pages/crew-detail"));
 
 const AppRouter = () => {
   const router = useRoutes([
@@ -25,6 +26,7 @@ const AppRouter = () => {
             { path: "review", element: <Reviews /> },
           ],
         },
+        { path: "/crew/:id", element: <CrewDetail /> },
       ],
     },
   ]);

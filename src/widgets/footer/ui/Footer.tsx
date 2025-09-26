@@ -22,7 +22,7 @@ export const Footer = () => {
   const navigate = useNavigate()
   return (
     <footer className="bg-white dark:bg-[#111111] text-black dark:text-white py-[30px] max-h-[240px]">
-      <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2">
+      <div className="container mx-auto grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 dark:bg-[#111111]">
         <div className="flex flex-col">
           <img
             className="w-[55px] h-[36px] mb-[48px]"
@@ -34,7 +34,7 @@ export const Footer = () => {
           <img className="w-[150px] h-[44px]" src={apple} alt="" />
         </div>
         <div>
-          <h4 className="font-bold mb-5">About us</h4>
+          <h4 className="font-bold mb-5 lg:mt-0 mt-8">About us</h4>
           <ul className=" flex flex-col gap-4 text-[#A1A1A1] ">
             <li className="flex gap-2 items-center hover:text-[#C61F1F] hover:underline">
               <img src={Icon1} alt="" />
@@ -56,7 +56,7 @@ export const Footer = () => {
           </ul>
         </div>
         <div>
-          <h4 className="font-bold mb-5">Categories</h4>
+          <h4 className="font-bold mb-5 lg:mt-0 mt-8">Categories</h4>
           <ul className=" flex flex-col gap-4 text-[#A1A1A1] ">
             <li className="flex gap-2 items-center hover:text-[#C61F1F] hover:underline">
               <img src={Icon5} alt="" />
@@ -78,13 +78,13 @@ export const Footer = () => {
           </ul>
         </div>
         <div>
-          <h4 className="font-bold mb-2">Contact us</h4>
-          <p className="text-[#C61F1F] text-[20px] font-medium mb-[54px]">
+          <h4 className="font-bold mb-2 lg:mt-0 mt-8">Contact us</h4>
+          <p className="text-[#C61F1F] text-[20px] font-medium lg:mb-[54px] md:mb-[30px] mb-[15px]">
             +998 (95) 897-33-38
           </p>
-          <div className="flex flex-col gap-2 mt-2">
-            <h4 className="text-[16px] font-medium">Social media</h4>
-            <div className="flex gap-4">
+          <div className="flex flex-col gap-2 lg:mt-2">
+            <h4 className="text-[16px] font-medium ">Social media</h4>
+            <div className="flex gap-4 lg:mb-0 mb-3">
               <img src={Icon9} alt="" />
               <img src={Icon10} alt="" />
               <img src={Icon11} alt="" />
