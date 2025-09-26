@@ -18,7 +18,7 @@ export const MovieInfo: FC<Props> = memo(({ id }) => {
   const secondary = "from-gray-800 to-gray-600";
 
   return (
-    <div className="bg-gray-50 dark:bg-[#0b0627]  text-gray-800 dark:text-white">
+    <div className="bg-gray-50 dark:bg-black  text-gray-800 dark:text-white">
       <section className="relative w-full h-[60vh] md:h-[70vh] flex items-end justify-start">
         <img
           src={createImageUrl(data?.backdrop_path)}

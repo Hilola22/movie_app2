@@ -5,9 +5,10 @@ import { memo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { MovieSort } from "@/features/movie-sort";
 import { MovieFilter } from "@/features/movie-filter";
-import { MovieDateFilter } from "../../../features/movie-date-filter/ui/MovieDateFilter";
+import { MovieDateFilter } from "@/features/movie-date-filter/ui/MovieDateFilter";
 
 export const Movie = memo(() => {
+  document.title = "All movies";
   const { getMovies } = useMovie();
   const [searchParams] = useSearchParams();
   const page = searchParams.get("page") ?? "1";

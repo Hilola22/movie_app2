@@ -9,7 +9,7 @@ export const Header = memo(() => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="dark:bg-black bg-white text-black dark:text-white w-full z-50 shadow-md">
+    <header className="dark:bg-[#111111] bg-white text-black dark:text-white w-full z-50 shadow-md">
       <nav className="container flex justify-between items-center h-20 px-4">
         <Logo />
 
@@ -52,7 +52,7 @@ export const Header = memo(() => {
         )}
 
         <Navigation />
-        <Login className="flex text-[12px]"/>
+        <Login className="flex text-[12px]" />
       </div>
       {open && (
         <div

@@ -23,7 +23,7 @@ export const MoviePagination: FC<Props> = memo(({ page, total_pages }) => {
         total={total_pages > 10000 ? 10000 : total_pages}
         pageSize={20}
         showSizeChanger={false}
-        className="dark:bg-gray-900 dark:rounded-2xl"
+        className="dark:bg-[#111111] dark:rounded-2xl"
       />
     </div>
   );

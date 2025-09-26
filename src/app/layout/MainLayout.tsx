@@ -7,7 +7,7 @@ const MainLayout = () => {
   return (
     <>
       <Header />
-      <main className="bg-[#f9fafb]  dark:bg-[#0b0627] dark:text-white">
+      <main className="bg-[#f9fafb]  dark:bg-black dark:text-white">
         <Outlet />
       </main>
       <Footer />

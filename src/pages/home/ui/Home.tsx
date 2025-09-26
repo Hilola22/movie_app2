@@ -4,6 +4,7 @@ import { memo } from "react";
 import { Hero } from "@/widgets/hero";
 
 export const Home = memo(() => {
+  document.title = "Movies App";
   const {getMovies} = useMovie()
   const {data} = getMovies()
   
