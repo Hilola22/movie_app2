@@ -16,7 +16,7 @@ export const MovieCard: FC<Props> = memo(({ movie }) => {
       className="group relative bg-white dark:bg-slate-900 rounded-[12px] overflow-hidden 
                  shadow-md hover:shadow-xl lg:hover:scale-[1.02] transition cursor-pointer"
     >
-      <div className="w-full h-[340px]">
+      <div className="w-full lg:h-[340px] h-[200px]">
         <img
           src={createImageUrl(movie.poster_path)}
           alt={movie.title}
