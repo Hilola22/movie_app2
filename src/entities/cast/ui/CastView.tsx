@@ -24,7 +24,7 @@ export const CastView: FC<Props> = memo((props) => {
             key={item.id}
           >
             <img
-              className=" object-cover rounded-xl"
+              className=" object-contain rounded-xl h-[225px] w-full"
               src={createImageUrl(item.profile_path)}
               alt=""
             />
