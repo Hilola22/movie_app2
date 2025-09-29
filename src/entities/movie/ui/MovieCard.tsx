@@ -1,5 +1,5 @@
 import { createImageUrl } from "@/shared/utils";
-import { memo, useState, type FC } from "react";
+import { memo, type FC } from "react";
 import type { IMovie } from "../model/types";
 import { useNavigate } from "react-router-dom";
 import { FaRegBookmark, FaBookmark } from "react-icons/fa6";

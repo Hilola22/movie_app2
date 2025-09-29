@@ -3,7 +3,6 @@ import { Logo } from "./Logo";
 import { Navigation } from "./Navigation";
 import { Option } from "./Option";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Login } from "../../../features/login";
 import { LanguageSwitcher } from "../../../features/language-switcher";
 
 export const Header = memo(() => {
