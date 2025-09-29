@@ -124,7 +124,7 @@ export const MovieInfo: FC<Props> = memo(({ id }) => {
           {imageData?.backdrops?.slice(0, 20)?.map((item: any, inx: number) => (
             <Image
               key={inx}
-              className="min-w-[200px] md:min-w-[300px] rounded-lg shadow-lg hover:scale-105 transition"
+              className="min-w-[200px] md:max-w-[300px] lg:max-w-[250px] min-h-[100px] max-h-[150px] rounded-lg shadow-lg hover:scale-105 transition"
               src={createImageUrl(item.file_path)}
               alt=""
               preview={false}

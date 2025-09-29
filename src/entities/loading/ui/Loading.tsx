@@ -16,7 +16,7 @@ export const Loading = memo(() => {
         .bounce3 { animation: bounce 1s infinite ease-in-out 0.4s; }
       `}</style>
 
-      <div className="fixed inset-0 flex flex-col gap-3 items-center justify-center z-50">
+      <div className="fixed inset-0 flex flex-col gap-3 items-center justify-center z-50 dark:bg-black bg-white">
         <div className="flex gap-2">
           <img src={Shape1} className="w-4 bounce1" alt="shape1" />
           <img src={Shape2} className="w-4 bounce2" alt="shape2" />

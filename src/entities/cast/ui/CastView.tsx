@@ -1,32 +1,40 @@
 import { memo, type FC } from "react";
 import { useCasts } from "../model/useCast";
-import { createImageUrl } from "@/shared/utils";
 import { useNavigate } from "react-router-dom";
+import profile from "@/shared/assets/profile.jpg";
 
-interface Props{
-  id: string
-  type: string
+interface Props {
+  id: string;
+  type: "cast" | "crew"; 
 }
 
-export const CastView: FC<Props> = memo((props) => {
-  const navigate = useNavigate()
-  const { id, type } = props;
-  const { getCasts } = useCasts()
-  const { data } = getCasts(id)
-  console.log(data && data[type]);
+function img(path?: string): string {
+  return path ? `https://image.tmdb.org/t/p/w500${path}` : profile;
+}
+
+export const CastView: FC<Props> = memo(({ id, type }) => {
+  const navigate = useNavigate();
+  const { getCasts } = useCasts();
+  const { data } = getCasts(id);
+
+  const list = data?.[type] ?? []; 
+
   return (
     <div className="container mx-auto flex gap-5 overflow-x-auto mt-5 mb-10">
-      {data &&
-        data[type]?.map((item: any) => (
+      {list.length > 0 ? (
+        list.map((item: any) => (
           <div
-            onClick={() => navigate(`/crew/${item.id}`)}
-            className="w-[620px] dark:hover:bg-slate-700 rounded-xl"
             key={item.id}
+            role="button"
+            tabIndex={0}
+            onClick={() => navigate(`/crew/${item.id}`)}
+            onKeyDown={(e) => e.key === "Enter" && navigate(`/crew/${item.id}`)}
+            className="w-auto cursor-pointer dark:hover:bg-slate-700 rounded-xl p-2"
           >
             <img
-              className=" object-contain rounded-xl h-[225px] w-full"
-              src={createImageUrl(item.profile_path)}
-              alt=""
+              className="bg-white object-cover rounded-xl mx-auto h-[200px] w-[160px]"
+              src={img(item.profile_path)}
+              alt={item.original_name ?? "Profile"}
             />
             <h3 className="w-[150px] font-semibold mt-3">
               {item.original_name}
@@ -35,8 +43,10 @@ export const CastView: FC<Props> = memo((props) => {
               {type === "cast" ? item.character : item.job}
             </h4>
           </div>
-        ))}
+        ))
+      ) : (
+        <p className="text-gray-400">No {type} found</p>
+      )}
     </div>
   );
 });
-

@@ -4,6 +4,7 @@ import { Navigation } from "./Navigation";
 import { Option } from "./Option";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Login } from "../../../features/login";
+import { LanguageSwitcher } from "../../../features/language-switcher";
 
 export const Header = memo(() => {
   const [open, setOpen] = useState(false);
@@ -52,7 +53,7 @@ export const Header = memo(() => {
         )}
 
         <Navigation />
-        <Login className="flex text-[12px]" />
+        <LanguageSwitcher className="inline-block w-[70px]"/>
       </div>
       {open && (
         <div

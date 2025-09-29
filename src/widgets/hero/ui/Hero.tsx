@@ -9,17 +9,19 @@ import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import { Loading } from "@/entities/loading";
 
 export const Hero = memo(() => {
   const navigate = useNavigate();
   const { getMovies } = useMovie();
-  const { data } = getMovies();
+  const { data, isLoading } = getMovies();
   const movies = data?.results?.slice(6, 11) || [];
 
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
     <section className="container w-full relative mb-10">
+      {isLoading && <Loading/>}
       <Swiper
         loop
         spaceBetween={10}

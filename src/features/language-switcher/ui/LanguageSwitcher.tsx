@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 
 const languages = [
   {
@@ -18,9 +18,10 @@ const languages = [
   },
 ];
 
-export default function LanguageSwitcher() {
+export const LanguageSwitcher = memo(({ className = "" }: { className?: string }) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(languages[0]);
+
 
   const choose = (lang: (typeof languages)[0]) => {
     setSelected(lang);
@@ -28,7 +29,9 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="relative z-10 lg:inline-block md:inline-block hidden">
+    <div
+      className={`relative z-10 lg:inline-block md:inline-block hidden ${className}`}
+    >
       <button
         onClick={() => setOpen((prev) => !prev)}
         className="flex items-center gap-2 bg-gray-400  dark:bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-600 dark:hover:bg-gray-700"
@@ -74,4 +77,4 @@ export default function LanguageSwitcher() {
       )}
     </div>
   );
-}
+})

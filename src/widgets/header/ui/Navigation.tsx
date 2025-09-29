@@ -2,8 +2,8 @@ import { memo } from "react";
 import { NavLink } from "react-router-dom";
 import { GoHomeFill } from "react-icons/go";
 import { MdLocalMovies } from "react-icons/md";
-import { BsFillTicketPerforatedFill } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
+import { FaBookmark } from "react-icons/fa6";
 
 export const Navigation = memo(() => {
   const baseLi =
@@ -17,7 +17,7 @@ export const Navigation = memo(() => {
             className={`${baseLi} ${
               isActive
                 ? "text-[#C61F1F] dark:text-[#ff4d4d]"
-                : "text-gray-500 dark:text-gray-300" 
+                : "text-gray-500 dark:text-gray-300"
             }`}
           >
             <GoHomeFill size={24} />
@@ -41,17 +41,17 @@ export const Navigation = memo(() => {
         )}
       </NavLink>
 
-      <NavLink to="/tickets">
+      <NavLink to="/bookmark">
         {({ isActive }) => (
           <li
             className={`${baseLi} ${
               isActive
                 ? "text-[#C61F1F] dark:text-[#ff4d4d]"
                 : "text-gray-500 dark:text-gray-300"
-            }`}
+            } mt-1`}
           >
-            <BsFillTicketPerforatedFill size={24} />
-            <span>Tickets</span>
+            <FaBookmark size={19} className="mb-1" />
+            <span>Bookmark</span>
           </li>
         )}
       </NavLink>
