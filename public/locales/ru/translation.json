@@ -1,20 +1,63 @@
 {
-    "greeting": "Privet mir",
-    "header": {
-        "navigation": {
-            "home": "Home ru",
-            "movies": "Movies ru",
-            "search": "Search ru"
-        }
-    },
-    "button":{
-        "submit": "submit",
-        "cancel": "cancel",
-        "loading": "loading",
-        "edit": "edit",
-        "send": "send",
-        "update": "update",
-        "delete": "delete",
-        "save": "save"
+  "greeting": "Привет, мир",
+  "header": {
+    "navigation": {
+      "home": "Главная",
+      "movies": "Фильмы",
+      "search": "Поиск",
+      "bookmark": "Закладки"
     }
+  },
+   "hero": {
+    "watchnow": "Смотреть сейчас"
+  },
+  "button": {
+    "submit": "Отправить",
+    "cancel": "Отмена",
+    "loading": "Загрузка",
+    "edit": "Редактировать",
+    "send": "Отправить",
+    "update": "Обновить",
+    "delete": "Удалить",
+    "save": "Сохранить"
+  },
+  "movies": {
+    "filters": {
+      "from": "От",
+      "to": "До",
+      "sort_by": "Сортировать",
+      "filter": "Фильтр"
+    }
+  },
+  "movies-detail": {
+    "gallery": "Галерея",
+    "info": "Дополнительная информация",
+    "similar": "Похожие фильмы",
+    "others": "Другие",
+    "cast": "Актерский состав",
+    "review": "Отзывы"
+  },
+   "search": {
+    "error": "Нет данных для поиска",
+    "name": "Поиск названия фильма...."
+  },
+  "footer": {
+    "aboutTitle": "О нас",
+    "aboutLinks": {
+      "publicOffer": "Публичная оферта",
+      "advertising": "Реклама",
+      "faq": "Частые вопросы",
+      "contacts": "Контакты"
+    },
+    "categoriesTitle": "Категории",
+    "categoriesLinks": {
+      "movie": "Фильмы",
+      "theater": "Театр",
+      "concerts": "Концерты",
+      "sport": "Спорт"
+    },
+    "contactTitle": "Свяжитесь с нами",
+    "phone": "+998 (95) 897-33-38",
+    "socialTitle": "Социальные сети"
+  }
 }

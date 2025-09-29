@@ -5,23 +5,26 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight, FaPlay } from "react-icons/fa6";
 import type { Swiper as SwiperType } from "swiper";
 import { useNavigate } from "react-router-dom";
+import "@/app/i18n";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { Loading } from "@/entities/loading";
+import { useTranslation } from "react-i18next";
 
 export const Hero = memo(() => {
   const navigate = useNavigate();
   const { getMovies } = useMovie();
   const { data, isLoading } = getMovies();
   const movies = data?.results?.slice(6, 11) || [];
+  const {t} = useTranslation()
 
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
     <section className="container w-full relative mb-10">
-      {isLoading && <Loading/>}
+      {isLoading && <Loading />}
       <Swiper
         loop
         spaceBetween={10}
@@ -56,7 +59,7 @@ export const Hero = memo(() => {
                   <span>•</span>
                   <span>1ч 34м</span>
                   <span>•</span>
-                  <span>{movie.original_language?.toUpperCase()}</span> 
+                  <span>{movie.original_language?.toUpperCase()}</span>
                 </p>
 
                 <button
@@ -67,7 +70,7 @@ export const Hero = memo(() => {
                              rounded-[12px] hover:scale-105 transition"
                 >
                   <FaPlay />
-                  Watch Now
+                  {t("hero.watchnow")}
                 </button>
               </div>
             </div>
@@ -102,7 +105,7 @@ export const Hero = memo(() => {
           {movies.map((movie: any) => (
             <SwiperSlide
               key={movie.id}
-              style={{ width: "110px" , height: "80px"}}
+              style={{ width: "110px", height: "80px" }}
               className="opacity-40 hover:opacity-100 cursor-pointer transition"
             >
               <img

@@ -1,9 +1,11 @@
 import { Select } from "antd";
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 
 export const MovieFilter = memo(() => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { t } = useTranslation();
 
   const onChange = (value: string) => {
     searchParams.set("sort", value);
@@ -31,7 +33,7 @@ export const MovieFilter = memo(() => {
     <div className="w-[200px]">
       <Select
         className="w-60"
-        placeholder="Sort By"
+        placeholder={t("movies.filters.filter")}
         options={options}
         allowClear
         value={searchParams.get("sort_by") || undefined}

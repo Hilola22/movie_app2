@@ -4,6 +4,8 @@ import { createImageUrl } from "@/shared/utils";
 import { Image } from "antd";
 import { Link } from "react-router-dom";
 import { Title } from "@/shared/ui/title/Title";
+import  "@/app/i18n"
+import { useTranslation } from "react-i18next";
 
 interface Props {
   id: string;
@@ -13,6 +15,7 @@ export const MovieInfo: FC<Props> = memo(({ id }) => {
   const { getMovieById, getMovieInfo } = useMovie();
   const { data } = getMovieById(id);
   const { data: imageData } = getMovieInfo(id, "images");
+ const {t} = useTranslation()
 
   const primary = "from-red-600 to-black"; 
   const secondary = "from-gray-800 to-gray-600";
@@ -119,7 +122,7 @@ export const MovieInfo: FC<Props> = memo(({ id }) => {
       </section>
 
       <section className="container mx-auto px-4 py-10">
-        <Title>Gallery</Title>
+        <Title>{t("movies-detail.gallery")}</Title>
         <div className="flex gap-4 overflow-x-auto pb-3 mt-4">
           {imageData?.backdrops?.slice(0, 20)?.map((item: any, inx: number) => (
             <Image
@@ -134,25 +137,25 @@ export const MovieInfo: FC<Props> = memo(({ id }) => {
       </section>
 
       <section className="container mx-auto px-4 md:px-6 py-10 mb-3">
-        <Title>More Information</Title>
+        <Title>{t("movies-detail.info")}</Title>
         <div className="flex flex-wrap gap-4 mt-4">
           <Link
             to="review"
             className={`px-5 py-2 bg-gradient-to-r ${primary} text-white rounded-full hover:scale-105 transition shadow-md`}
           >
-            Reviews
+            {t("movies-detail.review")}
           </Link>
           <Link
             to="cast"
             className={`px-5 py-2 bg-gradient-to-r ${secondary} text-white rounded-full hover:scale-105 transition shadow-md`}
           >
-            Cast
+            {t("movies-detail.cast")}
           </Link>
           <Link
             to="other"
             className="px-5 py-2 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-full hover:scale-105 transition shadow-md"
           >
-            Others
+            {t("movies-detail.others")}
           </Link>
         </div>
       </section>

@@ -1,20 +1,63 @@
 {
-    "greeting": "Salom dunyo",
-    "header": {
-        "navigation": {
-            "home": "Bosh sahifa",
-            "movies": "Kinolar",
-            "search": "Qidirish"
-        }
-    },
-    "button": {
-        "submit": "yuborish",
-        "cancel": "bekor qilish",
-        "loading": "kutish",
-        "edit": "o'zgartirish",
-        "send": "yuborish",
-        "update": "o'zgartirish",
-        "delete": "o'chirish",
-        "save": "saqlash"
+  "greeting": "Salom, dunyo",
+  "header": {
+    "navigation": {
+      "home": "Bosh sahifa",
+      "movies": "Filmlar",
+      "search": "Qidiruv",
+      "bookmark": "Saqlanganlar"
     }
+  },
+  "hero": {
+    "watchnow": "Tomosha qilish"
+  },
+  "button": {
+    "submit": "Yuborish",
+    "cancel": "Bekor qilish",
+    "loading": "Yuklanmoqda",
+    "edit": "Tahrirlash",
+    "send": "Yuborish",
+    "update": "Yangilash",
+    "delete": "O'chirish",
+    "save": "Saqlash"
+  },
+  "movies": {
+    "filters": {
+      "from": "Dan",
+      "to": "Gacha",
+      "sort_by": "Tartiblash",
+      "filter": "Filtrlash"
+    }
+  },
+   "movies-detail": {
+    "gallery": "Galereya",
+    "info": "Batafsil ma'lumot",
+    "similar": "O'xshash filmlar",
+    "others": "Boshqalar",
+    "cast": "Aktorlar tarkibi",
+    "review": "Sharhlar"
+  },
+   "search": {
+    "error": "Qidiruv natijasi topilmadi",
+    "name": "Film nomini qidiring...."
+  },
+  "footer": {
+    "aboutTitle": "Biz haqimizda",
+    "aboutLinks": {
+      "publicOffer": "Ommaviy oferta",
+      "advertising": "Reklama",
+      "faq": "Savollar",
+      "contacts": "Kontaktlar"
+    },
+    "categoriesTitle": "Kategoriyalar",
+    "categoriesLinks": {
+      "movie": "Filmlar",
+      "theater": "Teatr",
+      "concerts": "Konsertlar",
+      "sport": "Sport"
+    },
+    "contactTitle": "Biz bilan bog'laning",
+    "phone": "+998 (95) 897-33-38",
+    "socialTitle": "Ijtimoiy tarmoqlar"
+  }
 }

@@ -1,4 +1,5 @@
 import { memo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const languages = [
   {
@@ -20,14 +21,33 @@ const languages = [
 
 export const LanguageSwitcher = memo(({ className = "" }: { className?: string }) => {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(languages[0]);
+  const {i18n} = useTranslation()
 
+  const current =
+    languages.find(
+      (l) =>
+        ({
+          en: "En",
+          ru: "Py",
+          uz: "Uz",
+        }[i18n.language] === l.code)
+    ) || languages[0];
 
-  const choose = (lang: (typeof languages)[0]) => {
+  const [selected, setSelected] = useState(current);
+
+  const changeLang = (lang: (typeof languages)[0]) => {
     setSelected(lang);
     setOpen(false);
-  };
 
+    const map: Record<string, string> = {
+      En: "en",
+      Py: "ru",
+      Uz: "uz",
+    };
+
+    i18n.changeLanguage(map[lang.code]); 
+  };
+  
   return (
     <div
       className={`relative z-10 lg:inline-block md:inline-block hidden ${className}`}
@@ -62,7 +82,7 @@ export const LanguageSwitcher = memo(({ className = "" }: { className?: string }
           {languages.map((lang) => (
             <button
               key={lang.code}
-              onClick={() => choose(lang)}
+              onClick={() => changeLang(lang)}
               className="flex items-center gap-3 w-full px-4 py-2 text-left text-gray-200 hover:bg-gray-700"
             >
               <img

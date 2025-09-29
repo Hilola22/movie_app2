@@ -1,20 +1,64 @@
 {
-    "greeting": "Hello world",
-    "header": {
-        "navigation": {
-            "home": "Home",
-            "movies": "Movies",
-            "search": "Search"
-        }
-    },
-    "button":{
-        "submit": "submit",
-        "cancel": "cancel",
-        "loading": "loading",
-        "edit": "edit",
-        "send": "send",
-        "update": "update",
-        "delete": "delete",
-        "save": "save"
+  "greeting": "Hello world",
+  "header": {
+    "navigation": {
+      "home": "Home",
+      "movies": "Movies",
+      "search": "Search",
+      "bookmark": "BookMark"
     }
+  },
+  "hero":{
+    "watchnow": "Watch now"
+  },
+  "button": {
+    "submit": "submit",
+    "cancel": "cancel",
+    "loading": "loading",
+    "edit": "edit",
+    "send": "send",
+    "update": "update",
+    "delete": "delete",
+    "save": "save"
+  },
+  "movies": {
+    "filters": {
+      "from": "From",
+      "to": "To",
+      "sort_by": "Sort by Genre",
+      "filter": "Filter"
+    }
+  },
+  "movies-detail": {
+    "gallery": "Gallery",
+    "info" :"More Information",
+    "similar": "Similar movies",
+    "others": "Others",
+    "cast": "Cast",
+    "review":"Reviews"
+    
+  },
+  "search": {
+    "error": "No search data",
+    "name": "Search movie name...."
+  },
+  "footer": {
+    "aboutTitle": "About us",
+    "aboutLinks": {
+      "publicOffer": "Public offer",
+      "advertising": "Advertising",
+      "faq": "F.A.Q",
+      "contacts": "Contacts"
+    },
+    "categoriesTitle": "Categories",
+    "categoriesLinks": {
+      "movie": "Movie",
+      "theater": "Theater",
+      "concerts": "Concerts",
+      "sport": "Sport"
+    },
+    "contactTitle": "Contact us",
+    "phone": "+998 (95) 897-33-38",
+    "socialTitle": "Social media"
+  }
 }

@@ -1,9 +1,12 @@
 import { Select } from "antd";
 import { memo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 
 export const MovieDateFilter = memo(() => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { t } = useTranslation();
+
   const [fromYear, setFromYear] = useState<number | undefined>(
     searchParams.get("start_year")
       ? Number(searchParams.get("start_year"))
@@ -53,7 +56,7 @@ export const MovieDateFilter = memo(() => {
   return (
     <div className="flex gap-3">
       <Select
-        placeholder="From"
+        placeholder={t("movies.filters.from")}
         value={fromYear}
         onChange={onFromChange}
         style={{ width: 110 }}
@@ -61,7 +64,7 @@ export const MovieDateFilter = memo(() => {
         options={years.map((y) => ({ value: y, label: y }))}
       />
       <Select
-        placeholder="To"
+        placeholder={t("movies.filters.to")}
         value={toYear}
         onChange={onToChange}
         style={{ width: 110 }}
