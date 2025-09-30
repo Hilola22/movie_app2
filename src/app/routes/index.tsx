@@ -5,6 +5,7 @@ const Home = lazy(() => import("@/pages/home"));
 const Movie = lazy(() => import("@/pages/movie"));
 const Login = lazy(() => import("@/pages/login"));
 const Search = lazy(() => import("@/pages/search"));
+const NotFoundPage = lazy(() => import("@/pages/not-found"));
 const BookMark = lazy(() => import("@/pages/bookmark"));
 const MovieDetail = lazy(() => import("@/pages/movie-detail"));
 const Cast = lazy(() => import("@/pages/movie-detail/cast"));
@@ -35,6 +36,7 @@ const AppRouter = () => {
         { path: "search", element: <Search /> },
       ],
     },
+    { path: "*", element: <NotFoundPage /> },
   ]);
   return router;
 };
